@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class PiecewiseFunction {
+public class MAEDecisionTree {
 
     public static double[] x = {-2, -1, 0, 1, 2, 3, 4, 5, 6};
     public static double[] y = {-28, 1, 12, 11, 4, -3, 4, 7, 36};
@@ -17,8 +17,8 @@ public class PiecewiseFunction {
     public static void buildTree() {
         // Recursively choose three splitPoint to calculate the MAE value
         for (int a=0; a<splitPoint.length; a++) {
-            for (int b=a+1; b<splitPoint.length; b++) {
-                for (int c=b+1; c<splitPoint.length; c++) {
+            for (int b=a; b<splitPoint.length; b++) {
+                for (int c=b; c<splitPoint.length; c++) {
                     splitData(a, b, c);
                     calculateMean();
                     double[] meanArray = new double[]{m1, m2, m3, m4};
