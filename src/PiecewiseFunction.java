@@ -25,11 +25,12 @@ public class PiecewiseFunction {
                     double[] splitPoints = new double[]{sp1, sp2, sp3};
                     double result = calculateMAE(splitPoints, meanArray);
                     if (minMAE > result) {
-                        System.out.println("Update function");
+                        System.out.println("Function updated!");
                         minMAE = result;
                         min_MeanArray = meanArray;
                         min_SplitPoint = splitPoints;
                     }
+                    System.out.println("\n");
                 }
             }
         }
@@ -101,8 +102,7 @@ public class PiecewiseFunction {
             else
                 count += Math.abs(y[j] - meanArray[3]);
         }
-        System.out.printf("Current MAE: %.3f", count/9);
-        System.out.println("\n");
+        System.out.printf("Current MAE: %.3f\n", count/9);
         return count / 9;
     }
 
